@@ -1,6 +1,11 @@
 <html>
 <head>
     <title>Daftar Lamaran</title>
+    <style>
+        body {
+            background-color: #aaaaaa;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +19,7 @@
     </header>
     <main>
         <h1>Daftar Lamaran</h1>
-        <button>Tambah Lamaran</button>
+        <a href="tambah.php"><button>Tambah Lamaran</button></a>
         <br>
         <table border="1">
             <tr>
@@ -37,7 +42,7 @@
                 <td>Open</td>
                 <td>2023-01-01</td>
                 <td>LinkedIn</td>
-                <td><button>View</button> <button>Timeline</button> <button>Edit</button> <button>Hapus</button> <button>Link</button></td>
+                <td><button>View</button> <button>Timeline</button> <a href="edit.php"><button>Edit</button></a> <button>Hapus</button> <button>Link</button></td>
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
@@ -48,7 +53,7 @@
                 <td>Open</td>
                 <td>2023-01-01</td>
                 <td>LinkedIn</td>
-                <td><button>View</button> <button>Timeline</button> <button>Edit</button> <button>Hapus</button> <button>Link</button></td>
+                <td><button>View</button> <button>Timeline</button> <a href="edit.php"><button>Edit</button></a> <button>Hapus</button> <button>Link</button></td>
             </tr>
         </table>
     </main>
