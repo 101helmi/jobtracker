@@ -5,11 +5,12 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #aaaaaa;
+            background-color: #d6dfff;
         }
 
         nav {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
+            border-bottom: 1px solid #d4d4d4;
 
             display: flex;
             justify-content: space-between;
@@ -40,6 +41,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #e1e1e1;
+        }
+
+        button {
+            background-color: #000000;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
         }
     </style>
 </head>
