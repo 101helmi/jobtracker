@@ -123,6 +123,9 @@
                     <td>LinkedIn</td>
                     <td><button>View</button> <button>Timeline</button> <a href="edit.php"><button>Edit</button></a> <button>Hapus</button> <button>Link</button></td>
                 </tr>
+                <?php
+                // test
+                ?>
             </table>
         </div>
     </main>
