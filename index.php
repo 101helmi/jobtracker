@@ -85,8 +85,13 @@
     </header>
     <main>
         <div class="main-header">
-            <h1>Daftar Lamaran</h1>
-            <a href="tambah.php"><button>Tambah Lamaran</button></a>
+            <div class="main-header-title">
+                <h1>Daftar Lamaran</h1>
+            </div>
+            <div class="main-header-button">
+                <button onclick="testJavaScript()">Tes JavaScript</button>
+                <a href="tambah.php"><button>Tambah Lamaran</button></a>
+            </div>
         </div>
         <div>
             <table border="1">
@@ -129,5 +134,10 @@
             </table>
         </div>
     </main>
+    <script>
+        function testJavaScript() {
+            alert("JavaScript berhasil dijalankan!");
+        }
+    </script>
 </body>
 </html>
