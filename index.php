@@ -89,6 +89,7 @@
                 <h1>Daftar Lamaran</h1>
             </div>
             <div class="main-header-button">
+                <button onclick="hapusLocalStorage()">Hapus LocalStorage</button>
                 <button onclick="testJavaScript()">Tes JavaScript</button>
                 <a href="tambah.php"><button>Tambah Lamaran</button></a>
             </div>
@@ -132,11 +133,20 @@
                 // test
                 ?>
             </table>
+            <p>localStorage 'nama': <span id="nama"></span></p>
         </div>
     </main>
     <script>
         function testJavaScript() {
             alert("JavaScript berhasil dijalankan!");
+        }
+        
+        document.getElementById("nama").textContent = localStorage.getItem("nama");
+
+        function hapusLocalStorage() {
+            localStorage.removeItem("nama");
+            document.getElementById("nama").textContent = localStorage.getItem("nama");
+            // alert("LocalStorage 'nama' telah dihapus.");
         }
     </script>
 </body>

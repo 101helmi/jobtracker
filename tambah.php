@@ -127,7 +127,7 @@
             </div>
             <div class="main-header-button">
                 <a href="index.php"><button>Kembali</button></a>
-                <button>Simpan</button>
+                <button type="submit" id="simpan" name="simpan" value="Simpan">Simpan</button>
             </div>
         </div>
         <div class="form-container">
@@ -184,5 +184,23 @@
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById("simpan").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Simpan nilai-nilai dari form ke localStorage
+            // localStorage.setItem("nama", document.getElementById("nama").value);
+            // localStorage.setItem("posisi", document.getElementById("posisi").value);
+            // localStorage.setItem("lokasi", document.getElementById("lokasi").value);
+            // localStorage.setItem("portal", document.getElementById("portal").value);
+            // localStorage.setItem("tanggal_lamar", document.getElementById("tanggal_lamar").value);
+            // localStorage.setItem("tipe", document.getElementById("tipe").value);
+            // localStorage.setItem("link_lowongan", document.getElementById("link_lowongan").value);
+            // localStorage.setItem("catatan", document.getElementById("catatan").value);
+
+            localStorage.setItem("nama", "test");
+
+            window.location.href = "index.php"; // Redirect ke halaman index.php setelah menyimpan data
+        });
+    </script>
 </body>
 </html>
