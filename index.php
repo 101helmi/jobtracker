@@ -96,39 +96,20 @@
         </div>
         <div>
             <table border="1">
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>Perusahaan</th>
-                    <th>Posisi</th>
-                    <th>Lokasi</th>
-                    <th>Tipe</th>
-                    <th>Status</th>
-                    <th>Tanggal Lamar</th>
-                    <th>Portal</th>
-                    <th>Aksi</th>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>John Doe</td>
-                    <td>john.doe@example.com</td>
-                    <td>Web Developer</td>
-                    <td>Remote</td>
-                    <td>Open</td>
-                    <td>2023-01-01</td>
-                    <td>LinkedIn</td>
-                    <td><button>View</button> <button>Timeline</button> <a href="edit.php"><button>Edit</button></a> <button>Hapus</button> <button>Link</button></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>John Doe</td>
-                    <td>john.doe@example.com</td>
-                    <td>Web Developer</td>
-                    <td>Remote</td>
-                    <td>Open</td>
-                    <td>2023-01-01</td>
-                    <td>LinkedIn</td>
-                    <td><button>View</button> <button>Timeline</button> <a href="edit.php"><button>Edit</button></a> <button>Hapus</button> <button>Link</button></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th class="perusahaan">Perusahaan</th>
+                        <th class="posisi">Posisi</th>
+                        <th class="lokasi">Lokasi</th>
+                        <th class="tipe">Tipe</th>
+                        <th class="status">Status</th>
+                        <th class="tanggal_lamar">Tanggal Lamar</th>
+                        <th class="portal">Portal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
                 <?php
                 // test
                 ?>
@@ -148,6 +129,33 @@
             document.getElementById("nama").textContent = localStorage.getItem("nama");
             // alert("LocalStorage 'nama' telah dihapus.");
         }
+
+        // document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+        // document.write("<p>Saya sedang belajar Javascript</p>");
+
+        const data = [
+            { perusahaan: "PT. ABC", posisi: "Software Engineer", lokasi: "Jakarta", tipe: "Full Time", status: "Pending", tanggal_lamar: "2023-08-01", portal: "JobStreet", link: "https://www.jobstreet.com/id" },
+            { perusahaan: "PT. XYZ", posisi: "Data Analyst", lokasi: "Bandung", tipe: "Internship", status: "Accepted", tanggal_lamar: "2023-07-15", portal: "LinkedIn", link: "https://www.linkedin.com/jobs/" },
+            { perusahaan: "PT. DEF", posisi: "UI/UX Designer", lokasi: "Surabaya", tipe: "Contract", status: "Rejected", tanggal_lamar: "2023-06-20", portal: "Indeed", link: "https://www.indeed.com/jobs" }
+        ];
+
+        const tbody = document.querySelector("tbody");
+        data.forEach((item, index) => {
+            const tr = document.createElement("tr");
+            tr.dataset.index = index;
+            tr.innerHTML = `
+                <td><input type="checkbox"></td>
+                <td>${item.perusahaan}</td>
+                <td>${item.posisi}</td>
+                <td>${item.lokasi}</td>
+                <td>${item.tipe}</td>
+                <td>${item.status}</td>
+                <td>${item.tanggal_lamar}</td>
+                <td>${item.portal}</td>
+                <td><button>Edit</button> <button>Hapus</button> <a href="${item.link}" target="_blank"><button>Link</button></a></td>
+            `;
+            tbody.appendChild(tr);
+        });
     </script>
 </body>
 </html>
