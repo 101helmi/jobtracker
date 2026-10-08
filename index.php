@@ -89,8 +89,8 @@
                 <h1>Daftar Lamaran</h1>
             </div>
             <div class="main-header-button">
-                <button onclick="hapusLocalStorage()">Hapus LocalStorage</button>
-                <button onclick="testJavaScript()">Tes JavaScript</button>
+                <!-- <button onclick="hapusLocalStorage()">Hapus LocalStorage</button>
+                <button onclick="testJavaScript()">Tes JavaScript</button> -->
                 <a href="tambah.php"><button>Tambah Lamaran</button></a>
             </div>
         </div>
@@ -122,13 +122,13 @@
             alert("JavaScript berhasil dijalankan!");
         }
         
-        document.getElementById("nama").textContent = localStorage.getItem("nama");
+        // document.getElementById("nama").textContent = localStorage.getItem("nama");
 
-        function hapusLocalStorage() {
-            localStorage.removeItem("nama");
-            document.getElementById("nama").textContent = localStorage.getItem("nama");
-            // alert("LocalStorage 'nama' telah dihapus.");
-        }
+        // function hapusLocalStorage() {
+        //     localStorage.removeItem("nama");
+        //     document.getElementById("nama").textContent = localStorage.getItem("nama");
+        //     // alert("LocalStorage 'nama' telah dihapus.");
+        // }
 
         // document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
         // document.write("<p>Saya sedang belajar Javascript</p>");
@@ -139,23 +139,86 @@
             { perusahaan: "PT. DEF", posisi: "UI/UX Designer", lokasi: "Surabaya", tipe: "Contract", status: "Rejected", tanggal_lamar: "2023-06-20", portal: "Indeed", link: "https://www.indeed.com/jobs" }
         ];
 
-        const tbody = document.querySelector("tbody");
-        data.forEach((item, index) => {
-            const tr = document.createElement("tr");
-            tr.dataset.index = index;
-            tr.innerHTML = `
-                <td><input type="checkbox"></td>
-                <td>${item.perusahaan}</td>
-                <td>${item.posisi}</td>
-                <td>${item.lokasi}</td>
-                <td>${item.tipe}</td>
-                <td>${item.status}</td>
-                <td>${item.tanggal_lamar}</td>
-                <td>${item.portal}</td>
-                <td><button>Edit</button> <button>Hapus</button> <a href="${item.link}" target="_blank"><button>Link</button></a></td>
-            `;
-            tbody.appendChild(tr);
-        });
+        getAll();
+
+        function getAll() {
+            // console.log(data);
+
+            const perusahaan = localStorage.getItem("perusahaan");
+            const posisi = localStorage.getItem("posisi");
+            const lokasi = localStorage.getItem("lokasi");
+            const portal = localStorage.getItem("portal");
+            const tanggal_lamar = localStorage.getItem("tanggal_lamar");
+            const tipe = localStorage.getItem("tipe");
+            const link_lowongan = localStorage.getItem("link_lowongan");
+            const catatan = localStorage.getItem("catatan");
+
+            console.log("Perusahaan:", perusahaan);
+            console.log("Posisi:", posisi);
+            console.log("Lokasi:", lokasi);
+            console.log("Portal:", portal);
+            console.log("Tanggal Lamar:", tanggal_lamar);
+            console.log("Tipe:", tipe);
+            console.log("Link Lowongan:", link_lowongan);
+            console.log("Catatan:", catatan);
+
+            const newData = {
+                perusahaan: perusahaan,
+                posisi: posisi,
+                lokasi: lokasi,
+                portal: portal,
+                tanggal_lamar: tanggal_lamar,
+                tipe: tipe,
+                link_lowongan: link_lowongan,
+                catatan: catatan
+            };
+            data.push(newData);
+            console.log("Data Lamaran:", data);
+            const tbody = document.querySelector("tbody");
+            data.forEach((item, index) => {
+                const tr = document.createElement("tr");
+                tr.dataset.index = index;
+                tr.innerHTML = `
+                    <td><input type="checkbox"></td>
+                    <td>${item.perusahaan}</td>
+                    <td>${item.posisi}</td>
+                    <td>${item.lokasi}</td>
+                    <td>${item.tipe}</td>
+                    <td>${item.status}</td>
+                    <td>${item.tanggal_lamar}</td>
+                    <td>${item.portal}</td>
+                    <td><button>Edit</button> <button onclick="hapusData(${index})">Hapus</button> <a href="${item.link_lowongan}" target="_blank"><button>Link</button></a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function hapusData(index) {
+            data.splice(index, 1);
+            getAll();
+        }
+
+        // readLocalStorage();
+
+        function readLocalStorage() {
+            const perusahaan = localStorage.getItem("perusahaan");
+            const posisi = localStorage.getItem("posisi");
+            const lokasi = localStorage.getItem("lokasi");
+            const portal = localStorage.getItem("portal");
+            const tanggal_lamar = localStorage.getItem("tanggal_lamar");
+            const tipe = localStorage.getItem("tipe");
+            const link_lowongan = localStorage.getItem("link_lowongan");
+            const catatan = localStorage.getItem("catatan");
+
+            // console.log("Perusahaan:", perusahaan);
+            // console.log("Posisi:", posisi);
+            // console.log("Lokasi:", lokasi);
+            // console.log("Portal:", portal);
+            // console.log("Tanggal Lamar:", tanggal_lamar);
+            // console.log("Tipe:", tipe);
+            // console.log("Link Lowongan:", link_lowongan);
+            // console.log("Catatan:", catatan);
+        }
     </script>
 </body>
 </html>
