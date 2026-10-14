@@ -219,8 +219,6 @@
             // console.log("Link Lowongan:", link_lowongan);
             // console.log("Catatan:", catatan);
         }
-
-        alert("aku ingin tes konfik git dengan local storage");
     </script>
 </body>
 </html>
