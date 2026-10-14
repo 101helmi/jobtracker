@@ -197,8 +197,6 @@
             localStorage.setItem("link_lowongan", document.getElementById("link_lowongan").value);
             localStorage.setItem("catatan", document.getElementById("catatan").value);
 
-            // localStorage.setItem("nama", "test");
-
             window.location.href = "index.php"; // Redirect ke halaman index.php setelah menyimpan data
         });
     </script>

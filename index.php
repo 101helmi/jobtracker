@@ -114,7 +114,6 @@
                 // test
                 ?>
             </table>
-            <p>localStorage 'nama': <span id="nama"></span></p>
         </div>
     </main>
     <script>
