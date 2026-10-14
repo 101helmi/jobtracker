@@ -220,7 +220,7 @@
             // console.log("Catatan:", catatan);
         }
 
-        alert("test conflict git");
+        alert("aku ingin tes konfik git dengan local storage");
     </script>
 </body>
 </html>
