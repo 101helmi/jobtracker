@@ -219,6 +219,8 @@
             // console.log("Link Lowongan:", link_lowongan);
             // console.log("Catatan:", catatan);
         }
+
+        alert("test conflict git");
     </script>
 </body>
 </html>
